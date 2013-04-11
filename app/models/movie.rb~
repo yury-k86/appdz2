@@ -1,0 +1,6 @@
+class Movie < ActiveRecord::Base
+    def self.get_ratings
+	self.select("rating").group("rating").map {|c| c.rating}
+    end
+end
+
